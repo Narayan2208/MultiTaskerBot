@@ -130,7 +130,7 @@ bot.onText(/\/start/, (message) => {
   const wikiRandomApiUrl2 = "https://en.wikipedia.org/api/rest_v1/page/random/summary";
   bot.sendMessage(
     message.chat.id,
-    `Welcome ${message.from.first_name} 😊 to WiKi Bot 🤖! We're thrilled to have you here. Our bot specializes in fetching Wikipedia articles to provide you with instant knowledge on various topics. Just send a search query or a specific topic, and we'll fetch the relevant article for you. Feel free to explore and expand your knowledge with us. If you have any questions or need assistance, don't hesitate to ask. Enjoy exploring the world of information!  \n\n Here some command to use this Bot 🤖! \n '/start' -> to start the Bot \n '/stop' -> for stop the Bot  \n\n Type anything but in one word ! it will give you the results. \n Like : India, IPL etc.`
+    `Welcome ${message.from.first_name} 😊 to WiKi Bot 🤖! We're thrilled to have you here. Our bot specializes in fetching Wikipedia articles to provide you with instant knowledge on various topics. Just send a search query or a specific topic, and we'll fetch the relevant article for you. Feel free to explore and expand your knowledge with us. If you have any questions or need assistance, don't hesitate to ask. Enjoy exploring the world of information!  \n\n Here some command to use this Bot 🤖! \n /start -> to start the Bot \n /stop -> for stop the Bot  \n\n Type anything but in one word ! it will give you the results. \n Like : /search india,  \n /git enter your git username here,  \n /weather enter city name`
   );
   bot.sendMessage(message.chat.id, `Here is some random result for you 🔴`);
   postRandomWikiArticle2(wikiRandomApiUrl2, message.chat.id);
@@ -225,9 +225,9 @@ async function weatherReport(weatherUrl, id) {
   try {
     const response = await axios.get(weatherUrl);
     const allData = response.data;
-    const { weather , name, main, wind} = allData;
+    const { weather , name, main, wind, sys} = allData;
     console.log(allData, "weather");
-    bot.sendMessage(id, `You want to know about *${name}* weather ☁️ , here is the mini weather report of *${name}* . \n*Type*: ${weather[0].main} \n*Description* : ${weather[0].description} \n*Temperature* : ${main.temp}°C\n*Feels like* : ${main.feels_like}°C\n*Min temperature* : ${main.temp_min}°C\n*Max temperature* : ${main.temp_max}°C\n*Max temperature* : ${main.humidity}%\n*Wind* : ${wind.speed}km/h`, {
+    bot.sendMessage(id, `You want to know about *${name}, ${sys.country} * weather ☁️ , here is the mini weather report of *${name}* . \n*Type*: ${weather[0].main} \n*Description* : ${weather[0].description} \n*Temperature* : ${main.temp}°C\n*Feels like* : ${main.feels_like}°C\n*Min temperature* : ${main.temp_min}°C\n*Max temperature* : ${main.temp_max}°C\n*Max temperature* : ${main.humidity}%\n*Wind* : ${wind.speed}km/h`, {
       parse_mode: "Markdown",
     });
   
