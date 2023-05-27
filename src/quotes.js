@@ -1,0 +1,40 @@
+// quotes.js
+const quotes = [
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+    "The best way to predict the future is to create it. - Peter Drucker",
+    "Happiness is not something ready-made. It comes from your own actions. - Dalai Lama",
+    "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    "The only person you should try to be better than is the person you were yesterday. - Matty Mullins",
+    "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+    "Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+    "The secret of getting ahead is getting started. - Mark Twain",
+    "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+    "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "Don't be afraid to give up the good to go for the great. - John D. Rockefeller",
+    "The best revenge is massive success. - Frank Sinatra",
+    "The secret to success is to know something nobody else knows. - Aristotle Onassis",
+    "The harder I work, the luckier I get. - Samuel Goldwyn",
+    "Success is not the key to happiness. Happiness is the key to success. - Albert Schweitzer",
+    "You miss 100% of the shots you don't take. - Wayne Gretzky",
+    "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+    "The man who has confidence in himself gains the confidence of others. - Hasidic Proverb",
+    "Life is either a daring adventure or nothing at all. - Helen Keller",
+    "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. - Mark Twain",
+    "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle. - Christian D. Larson",
+    "The journey of a thousand miles begins with one step. - Lao Tzu",
+    "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+    "Success is not in what you have, but who you are. - Bo Bennett",
+    "The mind is everything. What you think you become. - Buddha",
+    "The only true wisdom is in knowing you know nothing. - Socrates",
+    "You become what you believe. - Oprah Winfrey",
+    // Add more quotes here
+  ];
+  
+  
+  module.exports = quotes;
