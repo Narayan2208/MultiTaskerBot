@@ -18,8 +18,11 @@
     "google-translate": "^3.0.0",
     "google-translate-api": "^2.3.0",
     "googleapis": "^118.0.0",
+    "node-notifier": "^10.0.1",
+    "node-schedule": "^2.1.1",
     "node-telegram-bot-api": "^0.61.0",
     "openai": "^3.2.1",
+    "play-sound": "^1.1.5",
     "yt-search": "^2.10.4",
     "ytdl-core": "^4.11.4"
   }

@@ -4,7 +4,8 @@ const TelegramBot = require("node-telegram-bot-api");
 const googleTranslate = require('google-translate');
 const axios = require("axios");
 const quotes = require("./quotes");
-
+const schedule = require('node-schedule');
+const notifier = require('node-notifier');
 require("dotenv").config();
 
 const request = require('request');
@@ -274,6 +275,56 @@ async function weatherReport(weatherUrl, id) {
   }
 }
 
+bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
+  const chatId = message.chat.id;
+  const reminderText = match[1];
+  const reminderTime = match[2];
+
+  // Parse the reminder time (assuming format: HH:MM)
+  const [hours, minutes] = reminderTime.split(':').map(Number);
+
+  // Set up the reminder schedule
+  const reminderDate = new Date();
+  reminderDate.setHours(hours);
+  reminderDate.setMinutes(minutes);
+
+  // Create the reminder job
+  const reminderJob = schedule.scheduleJob(reminderDate, () => {
+    bot.sendMessage(chatId, `⏰ Reminder: ${reminderText}`);
+
+    // Show notification
+    notifier.notify({
+      title: 'Reminder',
+      message: reminderText,
+      sound: true,
+    });
+  });
+
+  bot.sendMessage(chatId, 'Reminder set successfully!');
+});
+
+
+// WITHOUT NOTIFICATION FEATURE
+// bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
+//   const chatId = message.chat.id;
+//   const reminderText = match[1];
+//   const reminderTime = match[2];
+
+//   // Parse the reminder time (assuming format: HH:MM)
+//   const [hours, minutes] = reminderTime.split(':').map(Number);
+
+//   // Set up the reminder schedule
+//   const reminderDate = new Date();
+//   reminderDate.setHours(hours);
+//   reminderDate.setMinutes(minutes);
+
+//   // Create the reminder job
+//   const reminderJob = schedule.scheduleJob(reminderDate, () => {
+//     bot.sendMessage(chatId, `⏰ Reminder: ${reminderText}`);
+//   });
+
+//   bot.sendMessage(chatId, 'Reminder set successfully!');
+// });
 
 // 9db1ffe15f26498eb15fd32fc07a57ae
 // const apiKey = "YU7ZY9F+R2dRKuWTDcfjuA==8kZa5sQjr2TuSy0A";
