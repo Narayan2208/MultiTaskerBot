@@ -1,24 +1,19 @@
 
 
 const TelegramBot = require("node-telegram-bot-api");
-
+const googleTranslate = require('google-translate');
 const axios = require("axios");
 const quotes = require("./quotes");
+
 require("dotenv").config();
 
 const request = require('request');
 const { google } = require('googleapis');
 const OpenAI = require('openai');
-// 9db1ffe15f26498eb15fd32fc07a57ae
+
 // Telegram Bot token
 const telegramToken = process.env.TELEGRAM_TOKEN;
-// const apiKey = "YU7ZY9F+R2dRKuWTDcfjuA==8kZa5sQjr2TuSy0A";
 
-// Google Calendar credentials
-// const credentials = {
-//   client_email: process.env.GOOGLE_CLIENT_EMAIL,
-//   private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
-// };
 
 // Create a new Telegram Bot instance
 const bot = new TelegramBot(telegramToken, { polling: true });
@@ -88,8 +83,6 @@ bot.on("message", (message) => {
  }
  
 });
-
-
 
 bot.onText(/\/newstopic (.+)/, async (message, match) => {
   const countryName = match[1];
@@ -183,6 +176,36 @@ bot.onText(/\/newscategory (.+)/, async (message, match) => {
   }
 });
 
+const questions = [
+  {
+    question: 'What is the capital of France?',
+    answer: 'Paris',
+  },
+  {
+    question: 'What is the name of the current US president?',
+    answer: 'Joe Biden',
+  },
+  {
+    question: 'What is the chemical symbol for water?',
+    answer: 'H2O',
+  },
+];
+
+bot.on('message',  (message) => {
+  if (message.text === '/quiz') {
+    const question = questions[Math.floor(Math.random() * questions.length)];
+    bot.sendMessage(message.chat.id, question.question);
+    bot.on('message',  (answer) => {
+      if (answer.text === question.answer) {
+        bot.sendMessage(message.chat.id, 'Correct!');
+      } else {
+        bot.sendMessage(message.chat.id, 'Incorrect! The answer was ' + question.answer);
+      }
+      bot.removeListener('message', this);
+    });
+  }
+});
+
 async function postRandomWikiArticle(wikiRandomApiUrl, id) {
   try {
     const response = await axios.get(wikiRandomApiUrl);
@@ -250,6 +273,18 @@ async function weatherReport(weatherUrl, id) {
     console.error("Error fetching GitHub user details:", error);
   }
 }
+
+
+// 9db1ffe15f26498eb15fd32fc07a57ae
+// const apiKey = "YU7ZY9F+R2dRKuWTDcfjuA==8kZa5sQjr2TuSy0A";
+
+// Google Calendar credentials
+// const credentials = {
+//   client_email: process.env.GOOGLE_CLIENT_EMAIL,
+//   private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+// };
+
+
 
 // Create a new Google Calendar client
 // const calendar = google.calendar({
