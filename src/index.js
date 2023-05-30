@@ -6,10 +6,6 @@ const schedule = require("node-schedule");
 const notifier = require("node-notifier");
 require("dotenv").config();
 
-const request = require("request");
-const { google } = require("googleapis");
-const OpenAI = require("openai");
-
 // Telegram Bot token
 const telegramToken = process.env.TELEGRAM_TOKEN;
 
@@ -106,6 +102,10 @@ bot.on("message", (message) => {
     );
   }else if(message.text == "/reminder"){
     bot.sendMessage(message.chat.id,`Hey, ${message.from.first_name}  please provide also reminder name and time in this format :  /reminder take a break at 3:00 \n it will send a notification.`);
+  }else if(message.text == "/weather"){
+    bot.sendMessage(message.chat.id,`Hey, ${message.from.first_name}  please provide city name also`);
+  }else if(message.text == "/git"){
+    bot.sendMessage(message.chat.id,`Hey, ${message.from.first_name}  please provide username name also`);
   }
 });
 
@@ -198,6 +198,9 @@ bot.onText(/\/newscategory (.+)/, async (message, match) => {
     console.error("Error fetching news headlines:", error);
   }
 });
+
+
+
 
 const questions = [
   {
@@ -313,45 +316,35 @@ async function weatherReport(weatherUrl, id) {
     const allData = response.data;
     const { weather, name, main, wind, sys } = allData;
     console.log(allData, "weather");
-    bot.sendMessage(
+   await bot.sendMessage(
       id,
       `You want to know about *${name}, ${sys.country} * weather ☁️ , here is the mini weather report of *${name}* . \n*Type*: ${weather[0].main} \n*Description* : ${weather[0].description} \n*Temperature* : ${main.temp}°C\n*Feels like* : ${main.feels_like}°C\n*Min temperature* : ${main.temp_min}°C\n*Max temperature* : ${main.temp_max}°C\n*Max temperature* : ${main.humidity}%\n*Wind* : ${wind.speed}km/h`,
       {
         parse_mode: "Markdown",
       }
     );
+    if(weather[0].main == "Clouds"){
+      
+      bot.sendDocument(id, "https://media.tenor.com/PLqmB_SmXQMAAAAM/clouds-sky.gif", {
+        parse_mode: "Markdown",
+      });
+    }else if(weather[0].main == "Haze"){
+      bot.sendDocument(id, "https://i.pinimg.com/originals/77/42/24/77422432ef2ee5f1ffbd8828b1bca3b9.gif", {
+        parse_mode: "Markdown",
+      });
+      
+    }else if(weather[0].main == "Clear"){
+      bot.sendDocument(id, "https://media.tenor.com/reA9KS4hEqsAAAAd/dandelion-nature.gif", {
+        parse_mode: "Markdown",
+      });
+
+    }
   } catch (error) {
     console.error("Error fetching GitHub user details:", error);
   }
 }
 
-bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
-  const chatId = message.chat.id;
-  const reminderText = match[1];
-  const reminderTime = match[2];
 
-  // Parse the reminder time (assuming format: HH:MM)
-  const [hours, minutes] = reminderTime.split(":").map(Number);
-
-  // Set up the reminder schedule
-  const reminderDate = new Date();
-  reminderDate.setHours(hours);
-  reminderDate.setMinutes(minutes);
-
-  // Create the reminder job
-  const reminderJob = schedule.scheduleJob(reminderDate, () => {
-    bot.sendMessage(chatId, `⏰ Reminder: ${reminderText}`);
-
-    // Show notification
-    notifier.notify({
-      title: "Reminder",
-      message: reminderText,
-      sound: true,
-    });
-  });
-
-  bot.sendMessage(chatId, "Reminder set successfully!");
-});
 
 // WITHOUT NOTIFICATION FEATURE
 // bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
@@ -373,7 +366,7 @@ bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
 //   });
 
 //   bot.sendMessage(chatId, 'Reminder set successfully!');
-// });
+// }); 
 
 // 9db1ffe15f26498eb15fd32fc07a57ae
 // const apiKey = "YU7ZY9F+R2dRKuWTDcfjuA==8kZa5sQjr2TuSy0A";
@@ -446,3 +439,39 @@ bot.onText(/\/reminder (.+) at (.+)/, (message, match) => {
 //     'Welcome to your Telegram Bot!\nYou can use the /schedule command to schedule events on Google Calendar.'
 //   );
 // });
+
+
+// Replace with your YouTube Data API key
+const youtubeApiKey = "AIzaSyCKMWv2vMiz480rFPEf7nu1J8hR7lfxb6I";
+
+bot.onText(/\/play (.+)/, async (message, match) => {
+  const chatId = message.chat.id;
+  const musicName = match[1];
+
+  try {
+    // Search for videos based on the music name
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
+      musicName
+    )}&key=${youtubeApiKey}&type=video`;
+    const response = await axios.get(searchUrl);
+    
+    if (response.data.items.length === 0) {
+      bot.sendMessage(chatId, 'No videos found for the given music name.');
+      return;
+    }
+
+    // Retrieve the first video from the search results
+    const videoId = response.data.items[0].id.videoId;
+
+    // Create a link to the YouTube video
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+    bot.sendMessage(chatId, `You can listen to the music here: ${videoUrl}`);
+  } catch (error) {
+    console.error('Error occurred while searching for music:', error);
+    bot.sendMessage(chatId, 'An error occurred while searching for music.');
+  }
+});
+
+
+// newbotapikey= 6127525408:AAGE7VRLeUTUi51Ypp0aPD5ONqjfwkS0C7I
