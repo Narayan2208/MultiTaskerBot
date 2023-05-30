@@ -19,9 +19,9 @@ bot.onText(/\/start/, (message) => {
     message.chat.id,
     `Welcome ${message.from.first_name} 😊 to our MultiTaskerBot 🤖!
 
-    Get random articles, search results, quotes, quiz answers, weather updates, reminders, and worldwide news. Enjoy a seamless experience with our bot. Happy multitasking! 🌟  \n\n Here some command to START and STOP this Bot 🤖! \n /start -> to start the Bot \n /stop -> for stop the Bot`
+    Get random articles, search results, quotes, quiz answers, weather updates, reminders, and worldwide news. Enjoy a seamless experience with our bot. Happy multitasking! 🌟  \n\n Here some command to START and STOP this Bot 🤖! \n /start -> to start the Bot \n /stop -> for stop the Bot. \n\n Developed by - Narayan Dutta`
   );
-  bot.sendMessage(message.chat.id, ` \n\n Here is list of commands you can explore \n /search india,  \n /git enter your git username here,  \n /weather enter city name \n /quote \n /quiz \n /newstopic \n /newscategory \n /reminder take a break at 3:00`);
+  bot.sendMessage(message.chat.id, ` \n\n Here is list of commands you can explore \n /search india,  \n /git enter your git username here,  \n /weather enter city name \n /quote \n /quiz \n /newstopic \n /newscategory \n /reminder take a break at 3:00 \n /play OOPS`);
   bot.sendMessage(message.chat.id, `Here is some random result for you 🔴`);
   postRandomWikiArticle2(wikiRandomApiUrl2, message.chat.id);
 });
