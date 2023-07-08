@@ -36,45 +36,45 @@ To use the different functionalities, send the following commands to the bot:
 
 - `/weather [city]`: Fetches the weather information for the specified city.
 - - <div >
-        <img src="/weatherApiBot.png" width="800px" height="500px"/> 
+        <img src="/Assets/weatherApiBot.png" width="800px" height="500px"/> 
     </div>
     <br/>
 - `/search [topic]`: Retrieves a Wikipedia article on the specified topic.
 - <div >
-      <img src="/SearchWiki.png" width="800px" height="500px"/> 
+      <img src="/Assets/SearchWiki.png" width="800px" height="500px"/> 
   </div>
    <br/>
 - `/github [username]`: Fetches the GitHub profile details of the specified username.
 - <div >
-      <img src="/gitApiBot.png" width="800px" height="500px"/> 
+      <img src="/Assets/gitApiBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
 - `/quote`: Generates and shares a random quote.
 - <div >
-      <img src="/RandomQuoteBot.png" width="800px" /> 
+      <img src="/Assets/RandomQuoteBot.png" width="800px" /> 
   </div>
    <br/>
 - `/newstopic`: Fetches the latest news headlines from around the world.
 -  <div >
-      <img src="/NewsTopicBot.png" width="800px" height="500px"/> 
+      <img src="/Assets/NewsTopicBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
 
 - `/newscategory`: Fetches the latest news headlines from around the world of specific topics.
 -  <div >
-      <img src="/NewsCategoryBot.png" width="800px" height="500px"/> 
+      <img src="/Assets/NewsCategoryBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
 
 - `/quiz`: Starts an interactive quiz.
 - <div >
-      <img src="/QuizeeBot.png" width="800px" /> 
+      <img src="/Assets/QuizeeBot.png" width="800px" /> 
   </div>
    <br/>
 
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
 - <div >
-      <img src="/PlayBot.png" width="800px" height="500px"/> 
+      <img src="/Assets/PlayBot.png" width="800px" height="500px"/> 
   </div>
 
 
@@ -83,10 +83,6 @@ Feel free to explore and test out the various features of the bot.
 ## Contribution
 
 Contributions to this Telegram bot project are welcome. If you have any suggestions, improvements, or bug fixes, please submit a pull request. Make sure to follow the established code style and guidelines.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute this code as per the terms of the license.
 
 ## Contact
 
