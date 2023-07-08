@@ -51,7 +51,7 @@ To use the different functionalities, send the following commands to the bot:
    <br/>
 - `/quote`: Generates and shares a random quote.
 - <div >
-      <img src="/RandomQuoteBot.png" width="800px" height="500px"/> 
+      <img src="/RandomQuoteBot.png" width="800px" /> 
   </div>
    <br/>
 - `/newstopic`: Fetches the latest news headlines from around the world.
