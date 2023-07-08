@@ -119,7 +119,8 @@ bot.onText(/\/newstopic (.+)/, async (message, match) => {
   try {
     const newsAPIUrl = "https://newsapi.org/v2/top-headlines";
     const newsAPIKey = "9db1ffe15f26498eb15fd32fc07a57ae"; // Replace with your actual news API key
-
+    // /newstopic in 
+    // /newstopic in sports
     const response = await axios.get(newsAPIUrl, {
       params: {
         country: separatedWords[0], // Replace with the desired country code
