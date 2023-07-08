@@ -35,10 +35,14 @@ Once the bot is up and running, you can interact with it through Telegram. Simpl
 To use the different functionalities, send the following commands to the bot:
 
 - `/weather [city]`: Fetches the weather information for the specified city.
-- `/wiki [topic]`: Retrieves a Wikipedia article on the specified topic.
+- `/search [topic]`: Retrieves a Wikipedia article on the specified topic.
+- <div align="center">
+      <img src="/SearchWiki.png.png" width="800px" height="500px"/> 
+  </div>
 - `/github [username]`: Fetches the GitHub profile details of the specified username.
 - `/quote`: Generates and shares a random quote.
-- `/news`: Fetches the latest news headlines from around the world.
+- `/newstopic`: Fetches the latest news headlines from around the world.
+- `/newscategory`: Fetches the latest news headlines from around the world of specific topics.
 - `/quiz`: Starts an interactive quiz.
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
 
@@ -55,9 +59,3 @@ This project is licensed under the [MIT License](LICENSE). Feel free to modify a
 ## Contact
 
 If you have any questions or inquiries about this Telegram bot project, please feel free to reach out to me at [your-email@example.com].
-
-
-
-<div align="center">
-    <img src="/WellcomeNoteBot.png" width="800px" height="500px"/> 
-</div>
