@@ -38,30 +38,37 @@ To use the different functionalities, send the following commands to the bot:
 - - <div >
         <img src="/weatherApiBot.png" width="800px" height="500px"/> 
     </div>
+    <br/>
 - `/search [topic]`: Retrieves a Wikipedia article on the specified topic.
 - <div >
       <img src="/SearchWiki.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/github [username]`: Fetches the GitHub profile details of the specified username.
 - <div >
       <img src="/gitApiBot.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/quote`: Generates and shares a random quote.
 - <div >
       <img src="/RandomQuoteBot.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/newstopic`: Fetches the latest news headlines from around the world.
 -  <div >
       <img src="/NewsTopicBot.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/newscategory`: Fetches the latest news headlines from around the world of specific topics.
 -  <div >
       <img src="/NewsCategoryBot.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/quiz`: Starts an interactive quiz.
 - <div >
       <img src="/QuizeeBot.png" width="800px" height="500px"/> 
   </div>
+   <br/>
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
 - <div >
       <img src="/PlayBot.png" width="800px" height="500px"/> 
