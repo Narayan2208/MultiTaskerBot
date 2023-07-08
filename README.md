@@ -86,4 +86,4 @@ Contributions to this Telegram bot project are welcome. If you have any suggesti
 
 ## Contact
 
-If you have any questions or inquiries about this Telegram bot project, please feel free to reach out to me at [your-email@example.com].
+If you have any questions or inquiries about this Telegram bot project, please feel free to reach out to me at [narayandutta2208@gmail.com].
