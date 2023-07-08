@@ -59,20 +59,24 @@ To use the different functionalities, send the following commands to the bot:
       <img src="/NewsTopicBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
+
 - `/newscategory`: Fetches the latest news headlines from around the world of specific topics.
 -  <div >
       <img src="/NewsCategoryBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
+
 - `/quiz`: Starts an interactive quiz.
 - <div >
       <img src="/QuizeeBot.png" width="800px" height="500px"/> 
   </div>
    <br/>
+   
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
 - <div >
       <img src="/PlayBot.png" width="800px" height="500px"/> 
   </div>
+
 
 Feel free to explore and test out the various features of the bot.
 
