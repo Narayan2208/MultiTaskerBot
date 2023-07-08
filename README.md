@@ -35,16 +35,37 @@ Once the bot is up and running, you can interact with it through Telegram. Simpl
 To use the different functionalities, send the following commands to the bot:
 
 - `/weather [city]`: Fetches the weather information for the specified city.
+- - <div >
+        <img src="/weatherApiBot.png" width="800px" height="500px"/> 
+    </div>
 - `/search [topic]`: Retrieves a Wikipedia article on the specified topic.
 - <div >
       <img src="/SearchWiki.png" width="800px" height="500px"/> 
   </div>
 - `/github [username]`: Fetches the GitHub profile details of the specified username.
+- <div >
+      <img src="/gitApiBot.png" width="800px" height="500px"/> 
+  </div>
 - `/quote`: Generates and shares a random quote.
+- <div >
+      <img src="/RandomQuoteBot.png" width="800px" height="500px"/> 
+  </div>
 - `/newstopic`: Fetches the latest news headlines from around the world.
+-  <div >
+      <img src="/NewsTopicBot.png" width="800px" height="500px"/> 
+  </div>
 - `/newscategory`: Fetches the latest news headlines from around the world of specific topics.
+-  <div >
+      <img src="/NewsCategoryBot.png" width="800px" height="500px"/> 
+  </div>
 - `/quiz`: Starts an interactive quiz.
+- <div >
+      <img src="/QuizeeBot.png" width="800px" height="500px"/> 
+  </div>
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
+- <div >
+      <img src="/PlayBot.png" width="800px" height="500px"/> 
+  </div>
 
 Feel free to explore and test out the various features of the bot.
 
