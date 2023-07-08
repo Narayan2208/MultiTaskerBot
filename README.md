@@ -37,7 +37,7 @@ To use the different functionalities, send the following commands to the bot:
 - `/weather [city]`: Fetches the weather information for the specified city.
 - `/search [topic]`: Retrieves a Wikipedia article on the specified topic.
 - <div >
-      <img src="/SearchWiki.png.png" width="800px" height="500px"/> 
+      <img src="/SearchWiki.png" width="800px" height="500px"/> 
   </div>
 - `/github [username]`: Fetches the GitHub profile details of the specified username.
 - `/quote`: Generates and shares a random quote.
