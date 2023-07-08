@@ -68,10 +68,10 @@ To use the different functionalities, send the following commands to the bot:
 
 - `/quiz`: Starts an interactive quiz.
 - <div >
-      <img src="/QuizeeBot.png" width="800px" height="500px"/> 
+      <img src="/QuizeeBot.png" width="800px" /> 
   </div>
    <br/>
-   
+
 - `/song [query]`: Searches for YouTube song videos based on the specified query.
 - <div >
       <img src="/PlayBot.png" width="800px" height="500px"/> 
